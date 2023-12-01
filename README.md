@@ -30,7 +30,7 @@ which follow a pretty standard C project structure:
 Each day's solution is named to be something associated with the problem 
 description instead of the numbered day. Here's a list of each puzzle solution
 mapped to the day it's the solution to:
-- `test` : This is just a "Hello, World!" test program for testing purposes.
+- `test` : This is just a "Hello, World!" program for testing purposes.
 - `trebuchet` : This is the solution to day 1.
 
 ***
