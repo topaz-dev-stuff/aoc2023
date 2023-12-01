@@ -10,7 +10,7 @@ MV = mv -f
 LD = gcc
 LIBS = -fopenmp
 
-DAY?=test
+PUZZLE?=test
 
 # Targets
 
@@ -18,31 +18,24 @@ all: sources clean
 all_debug: debug clean
 
 memcheck: all_debug
-	valgrind --leak-check=full --track-origins=yes -s ./runner input/${DAY}.txt
+	valgrind --leak-check=full --track-origins=yes -s bin/runner input/${PUZZLE}.txt
 
 gdb: all_debug
-	gdb runner
-
-# install:
-# 	chmod +x install.sh
-# 	./install.sh
+	gdb bin/runner
 
 sources: CC_FLAGS += -O3 -march=native -ftree-vectorize -ftree-vectorizer-verbose=2
 sources: 
-	(cd puzzles && make $@)
-	(cd util && make $@)
-	${CC} ${CC_FLAGS} -o runner aoc.c `/bin/ls util/*.o puzzles/${DAY}.o` ${LIBS}
+	(cd src && make $@)
+	${CC} ${CC_FLAGS} -o bin/runner src/aoc.c `/bin/ls src/util/*.o src/puzzles/${PUZZLE}.o` ${LIBS}
 
 debug: CC_FLAGS += -O0 -Wall -ggdb
 debug: 
-	(cd puzzles && make $@)
-	(cd util && make $@)
-	${CC} ${CC_FLAGS} -o runner aoc.c `/bin/ls util/*.o puzzles/${DAY}.o`
+	(cd src && make $@)
+	${CC} ${CC_FLAGS} -o bin/runner src/aoc.c `/bin/ls src/util/*.o src/puzzles/${PUZZLE}.o`
 
 clean:
-	(cd puzzles && make $@)
-	(cd util && make $@)
+	(cd src && make $@)
 	${RM} *.o
 
 tidy:
-	${RM} runner
+	${RM} bin/runner
