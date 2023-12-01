@@ -14,7 +14,8 @@ each day's puzzle in C.
 
 There are serveral directories used by this project,
 which follow a pretty standard C project structure:
-- `bin` : Any compiled binary files used to run the program.
+- `bin` : Any compiled binary files used to run the program. Git doesn't track empty directories,
+ so you will need to create this when cloning the project.
 - `include` : Any header files used by the runner and solutions.
 - `input` : The input files used to test a solution.
 - `src` : The source code for the project.
