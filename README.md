@@ -38,8 +38,8 @@ mapped to the day it's the solution to:
 
 If you want to run any of the solutions, just clone the repository,
 compile the project, and run it:
-> `mkdir bin`
-> `make PUZZLE=<puzzle identifier>`
-> `bin/runner <path to input file>`
+> `mkdir bin`  
+> `make PUZZLE=<puzzle identifier>`  
+> `bin/runner <path to input file>`  
 
 ***
