@@ -36,8 +36,10 @@ mapped to the day it's the solution to:
 
 # Using this Repository
 
-If you want to run any of the solutions, just clone the repository
-and compile the project with `make PUZZLE=<puzzle identifier>`,
-and run the code with `bin/runner <path to input file>`.
+If you want to run any of the solutions, just clone the repository,
+compile the project, and run it:
+> `mkdir bin`
+> `make PUZZLE=<puzzle identifier>`
+> `bin/runner <path to input file>`
 
 ***
