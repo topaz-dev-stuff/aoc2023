@@ -9,7 +9,7 @@ MV = mv -f
 LD = gcc
 LIBS = -fopenmp -lz
 
-SRCS := io.c 
+SRCS := io.c logging.c math.c
 OBJS := $(SRCS:%.c=%.o)
 
 # Generic rules

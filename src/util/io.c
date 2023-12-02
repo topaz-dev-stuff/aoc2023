@@ -15,8 +15,8 @@ void *map_input(char *path, struct stat *stbuf) {
         close(fd);
         return NULL;
     }
-    // Mmap the file to memory for access.
-    data = mmap(NULL, stbuf->st_size , PROT_READ, MAP_SHARED, fd, 0);
+    // Mmap the file to memory for fast access.
+    data = mmap(NULL, stbuf->st_size , PROT_READ, MAP_SHARED | MAP_POPULATE, fd, 0);
     // Close the file since we don't need the descriptor anymore.
     if ((status = close(fd)) == -1) {
         return NULL;
