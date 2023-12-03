@@ -33,6 +33,7 @@ mapped to the day it's the solution to:
 - `test` : This is just a "Hello, World!" program for testing purposes.
 - `trebuchet` : This is the solution to day 1.
 - `cubes` : This is the solution to day 2.
+- `gears` : This is the solution to day 3.
 
 ***
 
