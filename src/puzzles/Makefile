@@ -9,7 +9,7 @@ MV = mv -f
 LD = gcc
 LIBS = -fopenmp -lz
 
-SRCS := test.c trebuchet.c cubes.c
+SRCS := test.c trebuchet.c cubes.c gears.c
 OBJS := $(SRCS:%.c=%.o)
 
 # Generic rules
