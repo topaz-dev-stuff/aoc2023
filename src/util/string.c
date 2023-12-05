@@ -13,11 +13,8 @@ char **split(char *str, char *delim, int *n_substrings) {
     }
 
     *n_substrings = delim_count + 1;
-    if (!delim_count) {
-        return NULL;
-    }
-
     char **result = malloc(*n_substrings * sizeof(char *));
+
     delim_count = 0;
     for(i = 0; i < strlen(str) - delim_len; i++) {
         if (!strncmp(str + i, delim, delim_len)) {
@@ -89,9 +86,16 @@ parse_t *parse_string(char *raw, char **delim, int n_delims) {
     root->children = NULL;
     
     char **split_string = split(raw, *delim, &n_substrings);
-
     if (split_string) {
         split_string = remove_empty_strings(split_string, &n_substrings);
+    }
+    // else {
+    //     split_string = malloc(sizeof(char *));
+    //     split_string[0] = malloc(strlen(raw) + 1);
+    //     strcpy(split_string[0], raw);
+    // }
+
+    if (split_string) {
         root->n_children = n_substrings;
         root->children = calloc(n_substrings, sizeof(parse_t));
         
