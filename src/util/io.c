@@ -62,13 +62,3 @@ char **split_by_line(char *data, size_t len, size_t *n_lines) {
     free(copy);
     return lines;
 }
-
-/* Parse lines into (integral) numbers.
- */
-long *convert_input_to_long(char **lines, size_t n_lines) {
-    long *numbers = malloc(n_lines * sizeof(int));
-    for (int i = 0; i < n_lines; i++) {
-        numbers[i] = atol(lines[i]);
-    }
-    return numbers;
-}
