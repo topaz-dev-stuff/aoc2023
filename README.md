@@ -34,6 +34,7 @@ mapped to the day it's the solution to:
 - `trebuchet` : This is the solution to day 1.
 - `cubes` : This is the solution to day 2.
 - `gears` : This is the solution to day 3.
+- `cards` : This is the solution to day 4.
 
 ***
 
