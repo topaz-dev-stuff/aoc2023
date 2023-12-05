@@ -32,6 +32,7 @@ void scratchcards(char **lines, size_t n_lines) {
         winners = int_array_from_parse(parse_tree->children[1].children, &winning_len);
         cards = int_array_from_parse(parse_tree->children[1].children + 1, &card_len);
 
+        // Find matching numbers with the winning numbers.
         int this_winnings = 1, matches = 0;
         for (int card_idx = 0; card_idx < card_len; card_idx++) {
             for (int win_idx = 0; win_idx < winning_len; win_idx++) {
@@ -43,6 +44,7 @@ void scratchcards(char **lines, size_t n_lines) {
             }
 next:
         }
+        // Update the recurrence
         for (int match = 1; match <= matches; match++) {
             if (i + match < n_lines) {
                 total_cards[i + match] += total_cards[i];
