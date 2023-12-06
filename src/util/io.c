@@ -36,20 +36,23 @@ char **split_by_line(char *data, size_t len, size_t *n_lines) {
     char *str, *line, *saveptr;
     int i;
 
-    // We need a copy because input data is read-only
+    // We need a copy because input data is read-only.
     char *copy = malloc(len+1);
     memcpy(copy, data, len);
 
-    // First pass is to count number of lines
+    // First pass is to count number of lines, not counting empty lines.
     for (i = 0; i < len; i++) {
         if (data[i] == '\n') {
             *n_lines += 1;
+            if (i+1 < len && data[i+1] == '\n') {
+                *n_lines -= 1;
+            }
         }
     }
 
     lines = malloc((*n_lines) * sizeof(char *));
 
-    // Copy each line into the output
+    // Copy each line into the output.
     for (i = 0, str = copy; ; i++, str = NULL) {
         line = strtok_r(str, "\n", &saveptr);
         if (line == NULL) {
