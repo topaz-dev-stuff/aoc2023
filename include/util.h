@@ -39,6 +39,9 @@ void log_perf(struct timespec *start, struct timespec *end, struct rusage *rusag
 // Math functions
 long logb2(size_t x);
 long round_pow2_up(size_t x);
+double _abs(double x);
+double _sqrt(double a, double precision);
+void solve_quadratic (double a, double b, double c, double *root1, double *root2);
 
 // String manipulation
 char **split(char *str, char *delim, int *n_substrings);

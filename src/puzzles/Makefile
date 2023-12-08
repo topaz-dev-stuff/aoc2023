@@ -10,7 +10,7 @@ LD = gcc
 LIBS = -fopenmp -lz
 
 SRCS := test.c trebuchet.c cubes.c gears.c cards.c \
-seeds.c
+seeds.c 6.c 7.c
 OBJS := $(SRCS:%.c=%.o)
 
 # Generic rules
