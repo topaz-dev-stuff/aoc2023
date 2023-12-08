@@ -36,6 +36,7 @@ mapped to the day it's the solution to:
 - `gears` : This is the solution to day 3.
 - `cards` : This is the solution to day 4.
 - `seeds` : This is the solution to day 5.
+- `boatrace` : This is the solution to day 6.
 
 ***
 
